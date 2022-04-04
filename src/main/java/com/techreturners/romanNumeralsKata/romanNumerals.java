@@ -44,6 +44,7 @@ public class romanNumerals {
     }
 
     public String toRoman(int n) {
+        String input_number = Integer.toString(n);
         initialiseNumberMap();
         StringBuilder roman_numeral = new StringBuilder();
         // Iterate through the baseValues and find out how many are present and substitute with the respective letter repeated.
@@ -55,7 +56,7 @@ public class romanNumerals {
                 n = n - (baseValues[i] * no_of_times);
             }
         }
-        return roman_numeral.toString();
+        return "The equivalent roman number for " + input_number + " is " + roman_numeral + ".";
     }
 
     public int fromRoman(String romanNumeral) {

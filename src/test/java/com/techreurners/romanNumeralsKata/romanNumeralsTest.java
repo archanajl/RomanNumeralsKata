@@ -33,49 +33,49 @@ public class romanNumeralsTest {
     @Test
     public void checkToRomanWithinItoX() {
     String expected = romanNumeral.toRoman(1);
-    Assertions.assertEquals(expected,"I");
+    Assertions.assertEquals(expected,"The equivalent roman number for 1 is I.");
 
 }
 
     @Test
     public void checkToRomanIV()  {
         String expected = romanNumeral.toRoman(4);
-        Assertions.assertEquals(expected,"IV");
+        Assertions.assertEquals(expected,"The equivalent roman number for 4 is IV.");
 
     }
 
     @Test
     public void checkToRomanVI()  {
         String expected = romanNumeral.toRoman(6);
-        Assertions.assertEquals(expected,"VI");
+        Assertions.assertEquals(expected,"The equivalent roman number for 6 is VI.");
 
     }
 
     @Test
     public void checkToRomanAbove100()  {
         String expected = romanNumeral.toRoman(409);
-        Assertions.assertEquals(expected,"CDIX");
+        Assertions.assertEquals(expected,"The equivalent roman number for 409 is CDIX.");
 
     }
 
     @Test
     public void checkToRomanAbove1000()  {
         String expected = romanNumeral.toRoman(1405);
-        Assertions.assertEquals(expected,"MCDV");
+        Assertions.assertEquals(expected,"The equivalent roman number for 1405 is MCDV.");
 
     }
 
     @Test
     public void checkToRomanAbove10()  {
         String expected = romanNumeral.toRoman(20);
-        Assertions.assertEquals(expected,"XX");
+        Assertions.assertEquals(expected,"The equivalent roman number for 20 is XX.");
 
     }
 
     @Test
     public void checkToRomanHugeValueMMMDCCXXIV()  {
         String expected = romanNumeral.toRoman(3724);
-        Assertions.assertEquals(expected,"MMMDCCXXIV");
+        Assertions.assertEquals(expected,"The equivalent roman number for 3724 is MMMDCCXXIV.");
 
     }
 
