@@ -16,6 +16,7 @@ public class romanNumeralsTest {
 
     @Test
     public void checkifRomanWithCorrectValue() {
+        romanNumeral.initialiseRomanMap();
         boolean expected = romanNumeral.checkIfRoman("XXV");
         Assertions.assertTrue(expected);
 
@@ -23,6 +24,7 @@ public class romanNumeralsTest {
 
     @Test
     public void checkifRomanWithWrongValue() {
+        romanNumeral.initialiseRomanMap();
         boolean expected = romanNumeral.checkIfRoman("ST");
         Assertions.assertFalse(expected);
 
@@ -74,6 +76,13 @@ public class romanNumeralsTest {
     public void checkToRomanHugeValueMMMDCCXXIV()  {
         String expected = romanNumeral.toRoman(3724);
         Assertions.assertEquals(expected,"MMMDCCXXIV");
+
+    }
+
+    @Test
+    public void checkFromRomanWithWrongValue(){
+        int expected = romanNumeral.fromRoman("ST");
+        Assertions.assertEquals(expected,0);
 
     }
 

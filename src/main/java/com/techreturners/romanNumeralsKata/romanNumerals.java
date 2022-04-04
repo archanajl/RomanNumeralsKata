@@ -35,7 +35,6 @@ public class romanNumerals {
     }
 
     public boolean checkIfRoman(String input_roman_numeral) {
-        initialiseRomanMap();
         // Check whether all characters exist in the numeral map
         List<Character> roman_numeral_list = input_roman_numeral.chars()
                 .mapToObj(c -> (char) c)
@@ -66,26 +65,29 @@ public class romanNumerals {
         int present_value ;
         int roman_numeral_size = romanNumeral.length();
 
-        // loop through the numeral
-        for (int position= 0; position < roman_numeral_size; position++){
-            present_value = numeralMap.get(romanNumeral.charAt(position));
-            if (position + 1 < roman_numeral_size){
-                int next_value = numeralMap.get(romanNumeral.charAt(position+1));
-                // Compare adjacent numerals
-                // For values where the smaller values comes before the larger values,
-                // make sure it is subtracted instead of adding
-                // and move the position extra as we have included the number value
-                if (present_value >= next_value){
+        if (checkIfRoman(romanNumeral)) {
+            // loop through the numeral
+            for (int position = 0; position < roman_numeral_size; position++) {
+                present_value = numeralMap.get(romanNumeral.charAt(position));
+                if (position + 1 < roman_numeral_size) {
+                    int next_value = numeralMap.get(romanNumeral.charAt(position + 1));
+                    // Compare adjacent numerals
+                    // For values where the smaller values comes before the larger values,
+                    // make sure it is subtracted instead of adding
+                    // and move the position extra as we have included the number value
+                    if (present_value >= next_value) {
+                        result_number += present_value;
+                    } else {
+                        result_number = result_number + next_value - present_value;
+                        position++;
+                    }
+                } else {
+                    // Add the value to the result
                     result_number += present_value;
-                }else{
-                    result_number = result_number + next_value - present_value;
-                    position++;
                 }
-            }else{
-                // Add the value to the result
-                result_number += present_value;
             }
         }
+
         return result_number;
 
     }
