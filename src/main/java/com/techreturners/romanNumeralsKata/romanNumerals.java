@@ -59,7 +59,7 @@ public class romanNumerals {
         return "The equivalent roman number for " + input_number + " is " + roman_numeral + ".";
     }
 
-    public int fromRoman(String romanNumeral) {
+    public String fromRoman(String romanNumeral) {
 
         initialiseRomanMap();
         int result_number = 0;
@@ -87,9 +87,12 @@ public class romanNumerals {
                     result_number += present_value;
                 }
             }
+
+            return "The equivalent number for " + romanNumeral + " is " + result_number + ".";
+        }else{
+            return "The Roman numeral entered is invalid!";
         }
 
-        return result_number;
 
     }
 
