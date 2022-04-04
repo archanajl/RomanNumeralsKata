@@ -8,7 +8,7 @@ public class romanNumerals {
     private static HashMap< Integer, String> numberMap = new HashMap<>();
     private static HashMap<Character, Integer> numeralMap = new HashMap<>();
 
-    public static void initialiseNumberMap(){
+    public void initialiseNumberMap(){
         numberMap.put(1, "I");
         numberMap.put(4,"IV");
         numberMap.put(5,"V");
@@ -24,7 +24,7 @@ public class romanNumerals {
         numberMap.put(1000,"M");
     }
 
-    public static void initialiseRomanMap(){
+    public void initialiseRomanMap(){
         numeralMap.put('I', 1);
         numeralMap.put('V', 5);
         numeralMap.put('X', 10);
@@ -36,7 +36,7 @@ public class romanNumerals {
 
 
 
-    public static String toRoman(int n) {
+    public String toRoman(int n) {
         initialiseNumberMap();
         StringBuilder roman_numeral = new StringBuilder();
         // Iterate through the baseValues and find out how many are present and substitute with the respective letter repeated.
@@ -51,11 +51,11 @@ public class romanNumerals {
         return roman_numeral.toString();
     }
 
-    public static int fromRoman(String romanNumeral) {
+    public int fromRoman(String romanNumeral) {
 
         initialiseRomanMap();
         int result_number = 0;
-        int present_value = 0;
+        int present_value ;
         int roman_numeral_size = romanNumeral.length();
 
         // loop through the numeral
