@@ -15,6 +15,20 @@ public class romanNumeralsTest {
     }
 
     @Test
+    public void checkifRomanWithCorrectValue() {
+        boolean expected = romanNumeral.checkIfRoman("XXV");
+        Assertions.assertTrue(expected);
+
+    }
+
+    @Test
+    public void checkifRomanWithWrongValue() {
+        boolean expected = romanNumeral.checkIfRoman("ST");
+        Assertions.assertFalse(expected);
+
+    }
+
+    @Test
     public void checkToRomanWithinItoX() {
     String expected = romanNumeral.toRoman(1);
     Assertions.assertEquals(expected,"I");

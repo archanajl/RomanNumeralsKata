@@ -34,7 +34,15 @@ public class romanNumerals {
         numeralMap.put('M', 1000);
     }
 
-
+    public boolean checkIfRoman(String input_roman_numeral) {
+        initialiseRomanMap();
+        // Check whether all characters exist in the numeral map
+        List<Character> roman_numeral_list = input_roman_numeral.chars()
+                .mapToObj(c -> (char) c)
+                .distinct()
+                .collect(Collectors.toList());
+        return (numeralMap.keySet().containsAll(roman_numeral_list));
+    }
 
     public String toRoman(int n) {
         initialiseNumberMap();
