@@ -1,6 +1,6 @@
-package com.techreurners.romanNumeralsKata;
+package com.archanajl.romanNumeralsKata;
 
-import com.techreturners.romanNumeralsKata.romanNumerals;
+import com.archanajl.romanNumeralsKata.romanNumerals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
